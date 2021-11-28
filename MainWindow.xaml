@@ -6,8 +6,5 @@
         xmlns:local="clr-namespace:SeaBattle"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="213,142,0,0" VerticalAlignment="Top" Width="75"/>
-
-    </Grid>
+    <Grid/>
 </Window>
