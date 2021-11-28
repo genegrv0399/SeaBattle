@@ -23,6 +23,7 @@ namespace SeaBattle
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }
