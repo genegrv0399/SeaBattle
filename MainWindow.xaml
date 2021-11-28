@@ -9,5 +9,6 @@
     <Grid>
         <ComboBox HorizontalAlignment="Left" Margin="264,210,0,0" VerticalAlignment="Top" Width="120"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="507,142,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="353,120,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
