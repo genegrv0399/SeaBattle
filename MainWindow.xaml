@@ -15,29 +15,41 @@
         <Border x:Name="myField" Grid.Column="0" Background="LightGray" Margin="10">
             <StackPanel>
                 <Grid>
-                    <ItemsControl>
+                    <ItemsControl ItemsSource="{Binding Field}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <UniformGrid Columns="10"/>
+                                <Canvas/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Content="{Binding}" Margin="0,0,5,5" />
+                                <Path Data="{Binding Geometry}"
+                                      Fill="{Binding Fill}"
+                                      Stroke="{Binding Stroke}"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
-                        <system:String>Item #1</system:String>
-                        <system:String>Item #2</system:String>
-                        <system:String>Item #3</system:String>
-                        <system:String>Item #4</system:String>
-                        <system:String>Item #5</system:String>
                     </ItemsControl>
                 </Grid>
             </StackPanel>
         </Border>
         <Border x:Name="enemyField" Grid.Column="1" Background="LightGray" Margin="10">
             <StackPanel>
-                <Rectangle></Rectangle>
+                <Grid>
+                    <ItemsControl ItemsSource="{Binding Field}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Path Data="{Binding Geometry}"
+                                      Fill="{Binding Fill}"
+                                      Stroke="{Binding Stroke}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
             </StackPanel>
         </Border>
     </Grid>

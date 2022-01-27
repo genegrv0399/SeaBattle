@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SeaBattle;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +25,34 @@ namespace SeaBattle
         public MainWindow()
         {
             InitializeComponent();
-
-            
+            InitializeRectangle();
+        }   
+        
+        public void InitializeRectangle()
+        {
+            double x = 10;
+            double y = 10;
+            var vm = new ViewModel
+            {
+                Field = new ObservableCollection<Field>()
+            };
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    vm.Field.Add(new Field(i, j, new RectangleGeometry(new Rect(10 + x, 10 + y, 20, 20)), Brushes.Azure, Brushes.Black));
+                    x += 25;
+                }
+                x = 10;
+                y += 25;
+            }
+            DataContext = vm;
         }
+
+    }
+
+    public class ViewModel
+    {
+        public ObservableCollection<Field> Field { get; set; }
     }
 }

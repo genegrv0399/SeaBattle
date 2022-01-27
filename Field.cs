@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Media;
 
 namespace SeaBattle
 {
-    internal class Field
+    public class Field
     {
         #region Поля
         private string сondition;
-        private int numberField;
+        private int numberFieldHorizantal;
+        private int numberFieldVertikal;
+        public Geometry Geometry { get; set; }
+        public Brush Fill { get; set; }
+        public Brush Stroke { get; set; }
         private enum ListСondition
         {
             // поле занято, поле не занято
@@ -23,10 +23,14 @@ namespace SeaBattle
         #endregion
 
         #region Конуструкторы
-        public Field(int k)
+        public Field(int h, int v, Geometry g, Brush f, Brush s)
         {
-            this.numberField = k;
-            this.сondition = ListСondition.fieldNotOccupied.ToString();
+            numberFieldHorizantal = h;
+            numberFieldVertikal = v;
+            Geometry = g;
+            Fill = f;
+            Stroke = s;
+            сondition = ListСondition.fieldNotOccupied.ToString();
         }
         #endregion
     }
